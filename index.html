@@ -34,7 +34,7 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:76px}
-body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word}
 img{max-width:100%}
 a{color:inherit}
 
@@ -51,7 +51,7 @@ a{color:inherit}
 .hero{max-width:1180px;margin:0 auto;padding:78px 20px 46px;text-align:center}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--ink-soft);letter-spacing:0;border-radius:999px;padding:9px 18px;background:var(--gray-bg)}
 .hero-eyebrow::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--yellow)}
-.hero h1{font-family:var(--serif);font-weight:800;font-size:clamp(30px,4.8vw,50px);line-height:1.32;letter-spacing:-.03em;margin:26px auto 16px;max-width:900px}
+.hero h1{font-family:var(--serif);font-weight:800;font-size:clamp(30px,4.8vw,50px);line-height:1.34;letter-spacing:-.03em;margin:26px auto 16px;max-width:900px;word-break:keep-all}
 .hero h1 .u-dl{background:linear-gradient(transparent 60%,var(--yellow) 60%)}
 .hero-sub{font-size:clamp(15px,1.6vw,17.5px);color:var(--ink-soft);max-width:720px;margin:0 auto}
 .hero-docs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:44px;text-align:left}
@@ -82,7 +82,7 @@ section{max-width:1180px;margin:0 auto;padding:64px 20px}
 .numcard.gold .big{color:var(--ink)}
 
 /* ---------- badges ---------- */
-.badge{display:inline-block;font-size:11.5px;font-weight:800;letter-spacing:0;padding:4px 11px;border-radius:999px;white-space:nowrap}
+.badge{display:inline-block;font-size:11.5px;font-weight:800;letter-spacing:0;padding:4px 11px;border-radius:999px;white-space:normal;word-break:keep-all;line-height:1.45}
 .b-same{background:var(--gray-bg);color:var(--ink-soft)}
 .b-dl{background:var(--yellow);color:var(--ink)}
 .b-gs{background:var(--gs-bg);color:var(--gs)}
@@ -97,7 +97,8 @@ thead th.c-std .col-doc{color:var(--std)} thead th.c-dl .col-doc{color:var(--dl)
 thead th .col-sub{font-weight:600;color:var(--muted);font-size:11.5px}
 tbody th{position:sticky;left:0;background:#fff;text-align:left;font-weight:800;font-size:14px;padding:15px 16px;border-bottom:1px solid var(--rule);min-width:150px;max-width:190px;vertical-align:top;z-index:1}
 tbody th .art{display:block;font-weight:600;font-size:11.5px;color:var(--muted);margin-top:4px}
-tbody td{padding:15px 16px;border-bottom:1px solid var(--rule);vertical-align:top;color:var(--ink-soft);min-width:200px}
+tbody td{padding:15px 16px;border-bottom:1px solid var(--rule);vertical-align:top;color:var(--ink-soft);min-width:200px;word-break:keep-all}
+tbody td:last-child{min-width:140px}
 tbody td b{color:var(--ink);font-weight:800}
 tbody td.hl-dl{background:#FFFBE6}
 tbody tr:last-child th,tbody tr:last-child td{border-bottom:none}
@@ -122,7 +123,7 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:none}
 .fc[open] .fc-caret{transform:rotate(180deg)}
 .fc-body{padding:0 24px 26px;display:none}
 .fc[open] .fc-body{display:block}
-.fc-answer{background:var(--gold-bg);border-radius:16px;padding:16px 18px;font-size:15px;margin-bottom:16px}
+.fc-answer{background:var(--gold-bg);border-radius:16px;padding:16px 18px;font-size:15px;margin-bottom:16px;word-break:keep-all}
 .fc-answer b{font-weight:800}
 .fc-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .fc-col{border:1px solid var(--rule);border-radius:18px;padding:0 0 16px;overflow:hidden;background:#fff;font-size:13.5px;color:var(--ink-soft)}
@@ -172,7 +173,8 @@ footer{border-top:1px solid var(--rule);margin-top:36px;background:var(--gray-bg
 .doc h3{font-size:17px;margin:28px 0 10px}
 .doc h4{font-size:15.5px;margin:24px 0 8px}
 .doc h5{font-size:14.5px;margin:18px 0 8px;color:var(--ink-soft)}
-.doc p,.doc li{font-size:14.5px;color:var(--ink-soft)}
+.doc p,.doc li{font-size:14.5px;color:var(--ink-soft);word-break:keep-all}
+.doc td,.doc th{word-break:keep-all;overflow-wrap:break-word}
 .doc p{margin:8px 0}
 .doc ul,.doc ol{margin:8px 0 8px 22px}
 .doc li{margin:3px 0}
@@ -191,6 +193,7 @@ footer{border-top:1px solid var(--rule);margin-top:36px;background:var(--gray-bg
 /* ---------- responsive ---------- */
 @media (max-width:860px){
   .hero{padding-top:52px}
+  .hero h1 br{display:none}
   .hero-docs{grid-template-columns:1fr}
   .fc-cols{grid-template-columns:1fr}
   .fc-btn{padding:17px}
